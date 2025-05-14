@@ -1,0 +1,7 @@
+openai>=1.0.0
+requests
+sounddevice
+pvporcupine
+scipy
+pydub
+python-dotenv
