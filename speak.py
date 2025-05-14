@@ -1,6 +1,5 @@
-
-# speak.py
-import os
+<h2>🗣 speak.py (OpenAI TTS, No done.wav)</h2>
+<pre><code>import os
 import requests
 import subprocess
 from dotenv import load_dotenv
@@ -19,7 +18,7 @@ def speak(text):
 
     data = {
         "model": "tts-1",
-        "voice": "shimmer",
+        "voice": "shimmer",  # You can also try: 'nova', 'echo', etc.
         "input": text
     }
 
@@ -32,11 +31,14 @@ def speak(text):
         with open("speech.mp3", "wb") as f:
             f.write(response.content)
 
-        subprocess.run(["ffmpeg", "-y", "-i", "speech.mp3", "-ar", "24000", "speech.wav"],
-                        stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        # Convert to WAV for aplay
+        subprocess.run([
+            "ffmpeg", "-y", "-i", "speech.mp3", "-ar", "24000", "speech.wav"
+        ], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
+        # Play it through your USB speaker (edit device as needed)
         subprocess.run(["aplay", "-D", "plughw:1,0", "speech.wav"])
-        subprocess.run(["aplay", "-D", "plughw:1,0", "done.wav"])
 
     except Exception as e:
         print(f"❌ Error using OpenAI TTS: {e}")
+</code></pre>
