@@ -1,0 +1,20 @@
+[Unit]
+Description=Dragon Assistant Voice AI
+After=network.target
+
+[Service]
+WorkingDirectory=/home/dragon/dragon-assistant
+ExecStart=/bin/bash -c 'source /home/dragon/dragon-assistant/env/bin/activate && python3 main.py'
+Restart=always
+User=dragon
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
+
+
+#HOW TO INSTALL
+#sudo cp dragon.service /etc/systemd/system/
+#sudo systemctl daemon-reexec
+#sudo systemctl enable dragon.service
+#sudo systemctl start dragon.service
