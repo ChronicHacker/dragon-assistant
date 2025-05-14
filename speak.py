@@ -1,5 +1,4 @@
-<h2>🗣 speak.py (OpenAI TTS, No done.wav)</h2>
-<pre><code>import os
+import os
 import requests
 import subprocess
 from dotenv import load_dotenv
@@ -41,4 +40,3 @@ def speak(text):
 
     except Exception as e:
         print(f"❌ Error using OpenAI TTS: {e}")
-</code></pre>
