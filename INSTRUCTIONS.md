@@ -53,7 +53,7 @@ sudo apt install python3 python3-pip python3-venv git ffmpeg espeak-ng libportau
 
 <h2>🐍 Step 4: Clone the Repo & Set Up Environment</h2>
 
-<pre><code>git clone https://github.com/YOUR_USERNAME/dragon-assistant.git
+<pre><code>git clone https://github.com/ChronicHacker/dragon-assistant.git
 cd dragon-assistant
 python3 -m venv env
 source env/bin/activate
@@ -93,7 +93,6 @@ PORCUPINE_ACCESS_KEY=your-access-key</code></pre>
 <ul>
   <li><code>wake.wav</code> – after wake word</li>
   <li><code>thinking.wav</code> – after transcribe, before GPT</li>
-  <li><code>done.wav</code> – after response spoken</li>
 </ul>
 
 <p>You can generate tones with <code>ffmpeg</code>:</p>
